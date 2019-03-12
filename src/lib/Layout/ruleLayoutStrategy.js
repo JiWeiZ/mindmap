@@ -17,8 +17,12 @@ function rightBottom (node) {
 
 function rootRender (node) {
     // 针对root的特殊方法，node只能是root
+    // 计算root的ruleArea的起点
     node.ruleArea.start.x = (window.innerWidth - node.ruleArea.width) / 2
     node.ruleArea.start.y = (window.innerHeight - node.ruleArea.height) / 2
+    // 计算root的selfArea的起点
+    node.selfArea.start.x = node.ruleArea.start.x
+    node.selfArea.start.y = node.ruleArea.start.y + node.ruleArea.height/2 - node.selfArea.height/2
 }
 
 export {

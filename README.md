@@ -6,7 +6,6 @@
 2. 完成ruleArea的布局
    1. 计算childrenArea的起点（相对node的selfArea的位置）
 3. 计算ruleArea的宽高
-4. 计算ruleArea的起点
 
 第二步计算ruleArea的起点
 
