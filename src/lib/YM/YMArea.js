@@ -1,8 +1,8 @@
-class Area {
+class YMArea {
     constructor({
         width = undefined,
         height = undefined,
-        start = { x: 0, y: 0 }
+        start = { x: undefined, y: undefined },
     } = {}) {
         this.start = start
         this.width = width
@@ -18,44 +18,19 @@ class Area {
     }
 }
 
-class LayoutArea extends Area {
+class LayoutArea extends YMArea {
     constructor({
-        direction = undefined,
-        strategy = undefined,
         width = undefined,
         height = undefined,
-        start = { x: 0, y: 0 }
+        start = { x: undefined, y: undefined },
+        strategy = undefined,
     } = {}) {
         super(width, height, start)
-        this.direction = direction
         this.strategy = strategy
-    }
-    doLayout () {
-        // 子类实现
-    }
-}
-
-class RuleArea extends LayoutArea {
-    constructor () {
-        super()
-    }
-    doLayout () {
-        this.strategy(this)
-    }
-}
-
-class ChildrenArea extends LayoutArea {
-    constructor () {
-        super()
-    }
-    doLayout () {
-        this.strategy(this.children)
     }
 }
 
 export {
-    Area, 
+    YMArea, 
     LayoutArea,
-    RuleArea,
-    ChildrenArea
 }
