@@ -16,7 +16,7 @@ class YMLayout {
         strategy = this.opts.strategy || 'logic_right'
         ls[strategy](nodes)
     }
-    
+
     layout() {
         const root = this.ym.manager.root
         root.doLayout()

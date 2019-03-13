@@ -15,7 +15,7 @@ class YM {
         const ym = this
         if (ym.inited) return
         ym.inited = true
-        
+
         var opts = ym.options;
 
         var opts_layout = {
@@ -52,6 +52,7 @@ class YM {
         this.layout.layout()
 
         this.view.show()
+        this.view.render()
     }
 }
 
