@@ -1,7 +1,7 @@
 import YMNode from './lib/YM/YMNode'
-import { rightCenter, rightBottom, rightTop } from './lib/Layout/ruleLayoutStrategy'
+import { rightCenter } from './lib/Layout/ruleLayoutStrategy'
 import { columnStrategy } from './lib/Layout/childLayoutStrategy'
-import { rootRender } from './lib/Layout/ruleLayoutStrategy'
+import { rootRender } from './lib/Layout/childLayoutStrategy'
 
 // YMNodeManager 的功能：data2manager
 const root = new YMNode('root');
@@ -28,7 +28,7 @@ n1.ruleArea.strategy = rightCenter
 n1.childrenArea.strategy = columnStrategy
 
 function test() {
-    root.calcRuleAreaWH()
+    root.doLayout()
     rootRender(root) // 临时
     root.style.left = root.ruleArea.start.x + root.selfArea.start.x
     root.style.top = root.ruleArea.start.y + root.selfArea.start.y

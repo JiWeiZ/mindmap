@@ -1,37 +1,83 @@
 import {hs, vs} from '../constraint'
 
+// ruleArea的布局策略
+// 即计算childrenArea的起点
+
 function rightTop (node) {
-    // 计算childArea的起点
     node.childrenArea.start.x = node.selfArea.width + hs
     node.childrenArea.start.y = 0
 }
 
 function rightCenter (node) {
-    // 计算childArea的起点
     node.childrenArea.start.x = node.selfArea.width + hs
     node.childrenArea.start.y = 0 - (node.childrenArea.height - node.selfArea.height) / 2
-    // 计算selfArea的起点
-    let minx = Math.min(0, node.childrenArea.start.x)
-    let miny = Math.min(0, node.childrenArea.start.y)
-    node.selfArea.start.x = 0 - minx
-    node.selfArea.start.y = 0 - miny
+
 }
 
 function rightBottom (node) {
     node.childrenArea.start.x = node.selfArea.width + hs
-    node.childrenArea.start.y = node.childrenArea.height - node.selfArea.height
+    node.childrenArea.start.y = 0 - node.childrenArea.height + node.selfArea.height
 }
 
-function rootRender (node) {
-    // 针对root的特殊方法，node只能是root
-    // 计算root的ruleArea的起点
-    node.ruleArea.start.x = (window.innerWidth - node.ruleArea.width) / 2
-    node.ruleArea.start.y = (window.innerHeight - node.ruleArea.height) / 2
+function leftTop (node) {
+    node.childrenArea.start.x = -1 * (node.childrenArea.width + hs)
+    node.childrenArea.start.y = 0
+}
+
+function leftCenter (node) {
+    node.childrenArea.start.x = -1 * (node.childrenArea.width + hs)
+    node.childrenArea.start.y = 0 - (node.childrenArea.height - node.selfArea.height) / 2
+}
+
+function leftBottom (node) {
+    node.childrenArea.start.x = -1 * (node.childrenArea.width + hs)
+    node.childrenArea.start.y = 0 - node.childrenArea.height + node.selfArea.height
+}
+
+function bottomLeft (node) {
+    node.childrenArea.start.x = 0
+    node.childrenArea.start.y = node.selfArea.height + vs
+}
+
+function bottomCenter (node) {
+    node.childrenArea.start.x = 0 - (node.childrenArea.width - node.selfArea.width) / 2
+    node.childrenArea.start.y = node.selfArea.height + vs
+}
+
+function bottomRight (node) {
+    node.childrenArea.start.x = 0 - node.childrenArea.width + node.selfArea.width
+    node.childrenArea.start.y = node.selfArea.height + vs
+}
+
+function topLeft (node) {
+    node.childrenArea.start.x = 0
+    node.childrenArea.start.y = 0 - node.childrenArea.height - vs
+}
+
+function topCenter (node) {
+    node.childrenArea.start.x = 0 - (node.childrenArea.width - node.selfArea.width) / 2
+    node.childrenArea.start.y = 0 - node.childrenArea.height - vs
+}
+
+function topRight (node) {
+    node.childrenArea.start.x = 0 - node.childrenArea.width + node.selfArea.width
+    node.childrenArea.start.y = 0 - node.childrenArea.height - vs
 }
 
 export {
     rightTop,
     rightCenter,
     rightBottom,
-    rootRender
+
+    leftTop,
+    leftCenter,
+    leftBottom,
+    
+    bottomLeft,
+    bottomCenter,
+    bottomRight,
+    
+    topLeft,
+    topCenter,
+    topRight,
 }
