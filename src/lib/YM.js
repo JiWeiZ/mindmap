@@ -2,11 +2,13 @@ import YMData from './Class/YMData'
 import YMLayout from './Class/YMLayout'
 import YMView from './Class/YMView'
 
+let DEFAULT_OPTIONS = {}
+
 class YM {
     constructor (options) {
         this.inited = false
         this.manager = null
-        this.options = {}
+        this.options = Object.assign({}, DEFAULT_OPTIONS, options);
         this._init()
     }
     _init () {
@@ -18,6 +20,7 @@ class YM {
 
         var opts_layout = {
           mode: opts.mode,
+          strategy: opts.strategy
           // hspace: opts.layout.hspace,
           // vspace: opts.layout.vspace,
           // pspace: opts.layout.pspace,

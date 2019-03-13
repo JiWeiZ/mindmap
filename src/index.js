@@ -9,9 +9,11 @@ function wrapMindMapData(nodes) {
     };
 }
 
-let MIND_OPTIONS = {}
 
-function start() {
+function start(strategy) {
+    let MIND_OPTIONS = {
+        strategy,
+    }
     window._ydmind = new YM(MIND_OPTIONS)
     _ydmind.show(wrapMindMapData(mockData))
 
@@ -25,4 +27,6 @@ function start() {
     rootRuleArea.style.top = `${root.ruleArea.start.y}px`
 }
 
-document.getElementById('submit').onclick = start
+document.getElementById('logic_right').onclick = start.bind(null, 'logic_right')
+document.getElementById('logic_bottom').onclick = start.bind(null, 'logic_bottom')
+document.getElementById('logic_bottom_catalog').onclick = start.bind(null, 'logic_bottom_catalog')

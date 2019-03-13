@@ -38,10 +38,16 @@
     height: 30px;
 }
 
-#submit {
+.buttons {
     position: absolute;
     top: 20px;
     right: 20px;
+    width: 120px;
+}
+
+.buttons>button {
+    display: block;
+    margin: 10px;
 }
 
 #rootRuleArea {
