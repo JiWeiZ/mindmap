@@ -64,7 +64,7 @@ function topRight (node) {
     node.childrenArea.start.y = 0 - node.childrenArea.height - vs
 }
 
-export {
+const rs = {
     rightTop,
     rightCenter,
     rightBottom,
@@ -81,3 +81,5 @@ export {
     topCenter,
     topRight,
 }
+
+export default rs

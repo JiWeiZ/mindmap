@@ -1,4 +1,0 @@
-let YM = function () {
-
-}
-

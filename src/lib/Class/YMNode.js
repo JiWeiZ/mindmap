@@ -13,6 +13,7 @@ class YMNode {
         this.childrenArea = new LayoutArea()
         this.style = { left: 0, top: 0 }
     }
+    
     doLayout() {
         if (!this.children.length) {
             this.ruleArea.width = this.selfArea.width
@@ -37,6 +38,10 @@ class YMNode {
 
     isRoot() {
         return this instanceof YMNode && this.parent === null
+    }
+
+    hasChild() {
+        return this.children.length > 0
     }
 
     doStrategy(area) {

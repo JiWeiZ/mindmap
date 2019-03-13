@@ -34,12 +34,16 @@
 }
 
 #n0011, #n0012 {
-    width: 30px;
-    height: 100px;
+    width: 100px;
+    height: 30px;
 }
 
 #submit {
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+#rootRuleArea {
+    z-index: -1;
 }
