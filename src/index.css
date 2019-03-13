@@ -22,15 +22,21 @@
     height: 70px;
 }
 
-#n002,#n0011, #n0012 {
+#n002 {
     width: 200px;
     height: 80px;
 }
 
-#n003 {
+#n003{
     width: 50px;
     height: 20px;
 }
+
+#n0011, #n0012 {
+    width: 30px;
+    height: 100px;
+}
+
 #submit {
     position: absolute;
     top: 20px;

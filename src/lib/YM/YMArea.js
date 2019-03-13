@@ -2,7 +2,7 @@ class YMArea {
     constructor({
         width = undefined,
         height = undefined,
-        start = { x: undefined, y: undefined },
+        start = { x: 0, y: 0 },
     } = {}) {
         this.start = start
         this.width = width
@@ -22,7 +22,7 @@ class LayoutArea extends YMArea {
     constructor({
         width = undefined,
         height = undefined,
-        start = { x: undefined, y: undefined },
+        start = { x: 0, y: 0 },
         strategy = undefined,
     } = {}) {
         super(width, height, start)

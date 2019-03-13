@@ -30,25 +30,31 @@ n1.childrenArea.strategy = columnStrategy
 function test() {
     root.calcRuleAreaWH()
     rootRender(root) // 临时
-    root.container.style.left = `${root.selfArea.start.x}px`
-    root.container.style.top = `${root.selfArea.start.y}px`
+    root.style.left = root.ruleArea.start.x + root.selfArea.start.x
+    root.style.top = root.ruleArea.start.y + root.selfArea.start.y
+    root.container.style.left = `${root.style.left}px`
+    root.container.style.top = `${root.style.top}px`
     for (var i = 1; i < nodes.length; i++) {
         var node = nodes[i]
-        node.selfArea.start.x = node.parent.selfArea.start.x
+        node.style.left = node.parent.style.left
             + node.parent.childrenArea.start.x
             + node.ruleArea.start.x
-        node.selfArea.start.y = node.parent.selfArea.start.y
+            + node.selfArea.start.x
+
+        node.style.top = node.parent.style.top
             + node.parent.childrenArea.start.y
             + node.ruleArea.start.y
-        node.container.style.left = `${node.selfArea.start.x}px`
-        node.container.style.top = `${node.selfArea.start.y}px`
+            + node.selfArea.start.y
+
+        node.container.style.left = `${node.style.left}px`
+        node.container.style.top = `${node.style.top}px`
     }
     console.log(root)
-    rootRuleArea.style.outline = `1px solid red`
-    rootRuleArea.style.width = `${root.ruleArea.width}px`
-    rootRuleArea.style.height = `${root.ruleArea.height}px`
-    rootRuleArea.style.left = `${root.ruleArea.start.x}px`
-    rootRuleArea.style.top = `${root.ruleArea.start.y}px`
+        rootRuleArea.style.outline = `1px solid red`
+        rootRuleArea.style.width = `${root.ruleArea.width}px`
+        rootRuleArea.style.height = `${root.ruleArea.height}px`
+        rootRuleArea.style.left = `${root.ruleArea.start.x}px`
+        rootRuleArea.style.top = `${root.ruleArea.start.y}px`
 }
 
 window.root = root
