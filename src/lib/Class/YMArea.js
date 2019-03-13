@@ -31,6 +31,6 @@ class LayoutArea extends YMArea {
 }
 
 export {
-    YMArea, 
+    YMArea,
     LayoutArea,
 }

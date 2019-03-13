@@ -1,5 +1,5 @@
-const hs = 30
-const vs = 30
+const hs = 15
+const vs = 15
 
 export {
     hs,

@@ -13,7 +13,7 @@ class YMNode {
         this.childrenArea = new LayoutArea()
         this.style = { left: 0, top: 0 }
     }
-    
+
     doLayout() {
         if (!this.children.length) {
             this.ruleArea.width = this.selfArea.width
@@ -31,7 +31,7 @@ class YMNode {
             // 计算ruleArea宽高
             this.getRuleAreaWH()
 
-            // 计算selfArea的起点 
+            // 计算selfArea的起点
             this.getSelfAreaStart()
         }
     }
@@ -76,7 +76,6 @@ class YMNode {
             miny = miny < child.ruleArea.start.y ? miny : child.ruleArea.start.y
             maxy = maxy > child.ruleArea.end.y ? maxy : child.ruleArea.end.y
         }
-
         this.childrenArea.width = maxx - minx
         this.childrenArea.height = maxy - miny
     }
@@ -88,4 +87,4 @@ class YMNode {
     }
 }
 
-export default YMNode   
+export default YMNode

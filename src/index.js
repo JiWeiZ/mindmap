@@ -1,6 +1,24 @@
 import YM from './lib/YM'
 import mockData from './mock/mockData'
 
+let mocker = {
+    renderHTML: function (nodes) {
+        let main = document.getElementById('main')
+        let htmls = nodes.map(e => {
+            var shape = this.getShape()
+            return `<div id="${e.id}" class="node" style="width:${shape.width}px;height:${shape.height}px">${e.id}</div>`
+        })
+        let res = htmls.reduce((p, v) => p + v, '')
+        main.innerHTML += res
+    },
+    getShape: function() {
+        var shape = {}
+        shape.height = Math.floor(Math.random() * 10 + 40)
+        shape.width = Math.floor(shape.height * (Math.random() * 1.4 + 1.5))
+        return shape
+    }
+}
+
 function wrapMindMapData(nodes) {
     return {
         data: nodes,
@@ -8,7 +26,6 @@ function wrapMindMapData(nodes) {
         meta: { name: 'ynote', version: '0.0.0' },
     };
 }
-
 
 function start(strategy) {
     let MIND_OPTIONS = {
@@ -27,6 +44,8 @@ function start(strategy) {
     rootRuleArea.style.top = `${root.ruleArea.start.y}px`
 }
 
-document.getElementById('logic_right').onclick = start.bind(null, 'logic_right')
-document.getElementById('logic_bottom').onclick = start.bind(null, 'logic_bottom')
-document.getElementById('logic_bottom_catalog').onclick = start.bind(null, 'logic_bottom_catalog')
+mocker.renderHTML(mockData)
+let buttons = [].slice.call(document.querySelector('.buttons').children)
+buttons.forEach(b => {
+    b.onclick = start.bind(null, b.id)
+})

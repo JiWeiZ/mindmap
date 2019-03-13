@@ -5,27 +5,47 @@ let mockData = [
         isroot: true,
         parentid: null
     }, {
-        id: 'n001',
+        id: 'n1',
         index: 1,
         isroot: false,
         parentid: 'root'
     }, {
-        id: 'n0011',
+        id: 'n11',
         index: 2,
         isroot: false,
-        parentid: 'n001'
+        parentid: 'n1'
     }, {
-        id: 'n0012',
+        id: 'n12',
         index: 2,
         isroot: false,
-        parentid: 'n001'
+        parentid: 'n1'
     }, {
-        id: 'n002',
+        id: 'n2',
         index: 1,
         isroot: false,
         parentid: 'root'
     }, {
-        id: 'n003',
+        id: 'n21',
+        index: 2,
+        isroot: false,
+        parentid: 'n2'
+    },{
+        id: 'n22',
+        index: 2,
+        isroot: false,
+        parentid: 'n2'
+    },{
+        id: 'n221',
+        index: 3,
+        isroot: false,
+        parentid: 'n22'
+    },{
+        id: 'n222',
+        index: 3,
+        isroot: false,
+        parentid: 'n22'
+    },{
+        id: 'n3',
         index: 1,
         isroot: false,
         parentid: 'root'
