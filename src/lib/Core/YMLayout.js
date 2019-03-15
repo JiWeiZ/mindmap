@@ -11,6 +11,10 @@ class YMLayout {
         console.log('YMLayout init')
     }
 
+    reset () {
+        console.log('YMLayout reset')
+    }
+
     injectStrategy() {
         const nodes = this.ym.manager.nodesArray,
         strategy = this.opts.strategy || 'logic_right'
@@ -22,6 +26,18 @@ class YMLayout {
         root.doLayout()
         cs.rootRender(root)
     }
+
+    /*
+
+    reset
+
+    toggle
+
+    expand
+
+    collapse
+
+     */
 }
 
 export default YMLayout

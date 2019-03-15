@@ -1,6 +1,6 @@
-import YMData from './Class/YMData'
-import YMLayout from './Class/YMLayout'
-import YMView from './Class/YMView'
+import YMData from './Core/YMData'
+import YMLayout from './Core/YMLayout'
+import YMView from './Core/YMView'
 
 let DEFAULT_OPTIONS = {}
 

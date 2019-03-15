@@ -12,6 +12,7 @@ class YMNode {
         this.ruleArea = new LayoutArea()
         this.childrenArea = new LayoutArea()
         this.style = { left: 0, top: 0 }
+        this.index = -1
     }
 
     doLayout() {

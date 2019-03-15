@@ -27,6 +27,7 @@ class LayoutArea extends YMArea {
     } = {}) {
         super(width, height, start)
         this.strategy = strategy
+        this.extraInfo = {}
     }
 }
 

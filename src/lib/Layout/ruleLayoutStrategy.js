@@ -1,4 +1,4 @@
-import {hs, vs} from '../constraint'
+import {hs, vs} from '../constant'
 
 // ruleArea的布局策略
 // 即计算childrenArea的起点
@@ -11,7 +11,6 @@ function rightTop (node) {
 function rightCenter (node) {
     node.childrenArea.start.x = node.selfArea.width + hs
     node.childrenArea.start.y = 0 - (node.childrenArea.height - node.selfArea.height) / 2
-
 }
 
 function rightBottom (node) {
@@ -64,6 +63,11 @@ function topRight (node) {
     node.childrenArea.start.y = 0 - node.childrenArea.height - vs
 }
 
+function center (node) {
+    node.childrenArea.start.x = 0 - node.childrenArea.extraInfo.leftAreaWidth - hs
+    node.childrenArea.start.y = 0 - (node.childrenArea.height - node.selfArea.height) / 2
+}
+
 const rs = {
     rightTop,
     rightCenter,
@@ -80,6 +84,8 @@ const rs = {
     topLeft,
     topCenter,
     topRight,
+
+    center
 }
 
 export default rs

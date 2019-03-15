@@ -1,4 +1,4 @@
-import YM from './lib/YM'
+import ydmind from './lib/index'
 import mockData from './mock/mockData'
 
 let mocker = {
@@ -31,7 +31,7 @@ function start(strategy) {
     let MIND_OPTIONS = {
         strategy,
     }
-    window._ydmind = new YM(MIND_OPTIONS)
+    window._ydmind = new ydmind(MIND_OPTIONS)
     _ydmind.show(wrapMindMapData(mockData))
 
     let rootRuleArea = document.getElementById('rootRuleArea')

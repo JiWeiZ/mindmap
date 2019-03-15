@@ -16,6 +16,11 @@ class YMData {
     init() {
         console.log('YMData init')
     }
+
+    reset() {
+        console.log('YMData reset') 
+    }
+
     data2manager(source_data) {
         let manager = new YMNodeManager(this.ym)
         manager.autoResize = source_data.autoResize
@@ -29,6 +34,7 @@ class YMData {
         for (let i = 0; i < nodes.length; i++) {
             let node = nodes[i]
             let ymnode = new YMNode(node.id)
+            ymnode.index = node.index
             YMNodes[node.id] = ymnode
             YMNodeArray.push(ymnode)
             if (node.parentid) {
